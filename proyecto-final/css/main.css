@@ -1,0 +1,113 @@
+h1,h2,h3,h4,h5, button, .amiibo-name{
+    font-family: 'Bitter', serif;
+
+}
+#navbar{
+    z-index: 1;
+}
+
+#ribbon{
+    background-color: #040000;
+    background-image: repeating-linear-gradient(45deg, transparent, transparent 25px, #646464 25px, #646464 40px);
+}
+#ribbon::after{
+    content: '';
+    background-color: transparent;
+    display: block;
+    height: 20px;
+    width: 50%;
+    margin: 0 auto;
+    position: relative;
+    left: auto;
+    margin-top: -40px;
+}
+#separator-ribbon{
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+}
+#separator-ribbon .content{
+    width: 150%;
+    height: 150px;
+    margin-left: -25%;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+}
+#sub-banner{
+    background-color: #040000;
+    position: relative;
+    margin-top: -20px;
+    z-index: 10;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.text-wrap {
+    white-space: nowrap !important;
+}
+
+#sub-banner img{
+    position: relative;
+    margin-top: -30px;
+}
+
+/* Sobreescribir estilos boostrap */
+.card {
+    border: none;
+}
+
+#sneakers{
+    background: rgb(255,255,255);
+    background-repeat: repeat-x;
+    background-size: 75%;
+    margin-top: -20px;
+}
+
+.card-border{
+    border: solid 10px white;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all ease-out 0.2s;
+}
+
+.text-shadow{
+    text-shadow: 0 3px 3px rgba(0,0,0,0.6);
+}
+
+
+#footer{
+    background-color: #353738;
+    background-size: 50px 50px;
+}
+
+.btn-dark {
+    background-color: #040000;
+    border-color: #040000;
+}
+
+.color-white {
+    color: #ffffff;
+}
+
+/* Estilos opciones marcas zapatillas */
+.boton-brand {
+    background-color: #000000;
+    color: #ffffff;
+    text-decoration: none;
+    width: 100%;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 15px 0;
+}
+
+.boton-brand:hover {
+    background-color: #fff;
+    color: #000;
+    border-bottom: 1px solid #000;
+}
+
+.boton-brand.active {
+    background-color: #fff;
+    color: #000;
+    border-bottom: 1px solid #000;
+}

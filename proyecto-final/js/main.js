@@ -142,7 +142,7 @@ const drawProductsDefault = () => {
                 <div class="card-body">
                     <h5 class="card-title">${el.brand} ${el.model}</h5>
                     <p class="card-text">Precio: S/.${el.price}</p>
-                    <a href="#" class="btn btn-primary">Lo quiero</a>
+                    <a href="javascript:void(0)" class="btn btn-primary btn-product">Lo quiero</a>
                 </div>
                 </div>
             </div>
@@ -194,7 +194,7 @@ const drawProducts = (id, brand) => {
         <div class="card-body">
         <h5 class="card-title">${el.brand} ${el.model}</h5>
         <p class="card-text">Precio: S/.${el.price}</p>
-        <a href="#" class="btn btn-primary">Lo quiero</a>
+        <a href="javascript:void(0)" class="btn btn-primary btn-product">Lo quiero</a>
         </div>
         </div>
         </div>
@@ -208,6 +208,47 @@ const drawProducts = (id, brand) => {
     items = ''
 }
 
+// sweetalert
+const addModalClass = () => {
+    let btnProduct = document.querySelectorAll('.btn-product')
+
+    //itemContainer -> scope mayor
+    itemContainer.addEventListener('click', e => {
+        if(e.target.classList.contains('btn-product')) {
+            btnProduct.forEach( el => {el.classList.remove("modal-open")})
+            e.target.classList.add("modal-open")
+            let modalOpen = e.target
+
+            openModalProduct(modalOpen);
+
+        }
+
+    })
+
+}
+
+const openModalProduct = (modalOpen) => {
+    
+    if(modalOpen != null) {
+        Swal.fire({
+            showCloseButton: true,
+            showConfirmButton: true,
+            template: '#modal-product-template',
+            customClass: {
+                container: 'modal modal--product modal__content-wrapper',
+                popup: 'modal--product__content',
+                header: 'modal--product__content__header',
+                image: 'modal--product__content_img',
+                title: 'modal--product__content__title',
+                closeButton: 'modal--product__content__close-btn',
+                content: 'modal--product__content__body-wrapper',
+                htmlContainer: 'modal--product__content__body',
+            }
+        })
+    }
+}
+
 
 // FUNCIONES LLAMADAS
 drawProductsDefault()
+addModalClass();

@@ -30,13 +30,13 @@ data = [
                 price: 350
             },
             {
-                image: './img/productos/adidas-1.jpg',
+                image: './img/productos/adidas-2.jpg',
                 brand: 'Adidas',
                 model: 'Runner Clasico',
                 price: 410
             },
             {
-                image: './img/productos/adidas-1.jpg',
+                image: './img/productos/adidas-3.jpg',
                 brand: 'Adidas',
                 model: 'Tennis Max',
                 price: 400
@@ -44,46 +44,46 @@ data = [
         ]
     },
     {
-        rebook: [
+        airJordan: [
             {
-                image: './img/productos/adidas-1.jpg',
-                brand: 'Rebook',
+                image: './img/productos/airJordan-1.jpg',
+                brand: 'Nike Air Jordan',
                 model: 'Turbo Max',
-                price: 350
+                price: 319
             },
             {
-                image: './img/productos/adidas-1.jpg',
-                brand: 'Rebook',
+                image: './img/productos/airJordan-2.jpg',
+                brand: 'Nike Air Jordan',
                 model: 'Runner Clasico',
-                price: 410
+                price: 398
             },
             {
-                image: './img/productos/adidas-1.jpg',
-                brand: 'Rebook',
+                image: './img/productos/airJordan-3.jpg',
+                brand: 'Nike Air Jordan',
                 model: 'Tennis Max',
-                price: 400
+                price: 219
             }
         ]
     },
     {
         puma: [
             {
-                image: './img/productos/vans-1.jpg',
+                image: './img/productos/puma-1.jpeg',
                 brand: 'Puma',
                 model: 'Capsule Runner',
-                price: 189
+                price: 452
             },
             {
-                image: './img/productos/vans-1.jpg',
+                image: './img/productos/puma-2.jpeg',
                 brand: 'Puma',
                 model: 'Capsule Sport',
-                price: 199
+                price: 187
             },
             {
-                image: './img/productos/vans-1.jpg',
+                image: './img/productos/puma-3.jpeg',
                 brand: 'Puma',
                 model: 'Capsule Tennis',
-                price: 289
+                price: 321
             }
         ]
     },
@@ -96,13 +96,13 @@ data = [
                 price: 189
             },
             {
-                image: './img/productos/vans-1.jpg',
+                image: './img/productos/vans-2.jpg',
                 brand: 'Vans',
                 model: 'Capsule Sport',
                 price: 199
             },
             {
-                image: './img/productos/vans-1.jpg',
+                image: './img/productos/vans-3.jpg',
                 brand: 'Vans',
                 model: 'Capsule Tennis',
                 price: 289
@@ -166,9 +166,9 @@ const chooseBrand = e => {
             idBrand = 1;
             brand = 'adidas'
             break
-        case 'rebook-brand' :
+        case 'nike-air-jordan-brand' :
             idBrand = 2;
-            brand = 'rebook'
+            brand = 'airJordan'
             break
         case 'puma-brand' :
             idBrand = 3;

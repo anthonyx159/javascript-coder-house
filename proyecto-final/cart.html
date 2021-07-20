@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./node_modules/sweetalert2/dist/sweetalert2.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css" crossorigin="anonymous">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/cart.css">
 </head>
 <body>
     
@@ -30,65 +31,18 @@
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="/">Inicio</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Catalogo</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Nosotros</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/cart.html">Carrito</a></li>
+                    <li class="nav-item"><a class="nav-link" id="getItems" href="/cart.html">Carrito</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- CAROUSEL-->
-    <div id="mainSlider" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="img/banner-1.jpeg" class="d-block w-100" alt="...">
-          </div>  
-          <div class="carousel-item">
-            <img src="img/banner-2.jpeg" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="img/banner-3.jpeg" class="d-block w-100" alt="...">
-          </div>
-        </div>
-    </div><!-- CAROUSEL-->
-
-    <!-- RIBBON-->
-    <div id="ribbon">
-        <div id="sub-banner" class="container w-50 pl-5 pr-5 rounded-lg">
-          <!-- slide -->
-          <div class="row align-items-center">
-            <div class="col-sm p-3" id="description">
-              <img src="img/main-logos.jpeg" class="w-100 mx-auto d-block" alt="...">
-            </div>
-            
-            <div class="col-sm p-3 text-light text-center">
-              <p class="h3 text-wrap color-dark">Encuentra el</p>
-              <h4 class="h2 text-shadow">modelo ideal</h4>
-            </div>
-          </div><!-- SLIDE-->
-        </div>
+   <!-- CART -->
+   <section class="items" id="cart">
+    <div class="container-fluid items-content">
     </div>
+   </section>
 
-    <!-- SNEAKERS-->
-    <div id="sneakers">
-      <div class="container p-0">
-        
-        <div class="row pt-5">
-            <h3 class="text-center pb-4 pt-4 h1">Encuentra el calzado perfecto para ti</h3>
-        </div>
-        <div class="container-fluid p-0">
-          <ul class="row p-0" id="brand-container">
-            <li class="col-sm d-flex justify-content-center px-0 bg-option"><a href="javascript:void(0)" class="boton-brand" id="nike-brand">Nike</a></li>
-            <li class="col-sm d-flex justify-content-center px-0 bg-option"><a href="javascript:void(0)" class="boton-brand" id="adidas-brand">Adidas</a></li>
-            <li class="col-sm d-flex justify-content-center px-0 bg-option"><a href="javascript:void(0)" class="boton-brand" id="nike-air-jordan-brand">Air Jordan</a></li>
-            <li class="col-sm d-flex justify-content-center px-0 bg-option"><a href="javascript:void(0)" class="boton-brand" id="puma-brand">Puma</a></li>
-            <li class="col-sm d-flex justify-content-center px-0 bg-option"><a href="javascript:void(0)" class="boton-brand" id="vans-brand">Vans</a></li>
-          </ul>
-        </div>
-
-        <div class="row" id="item-container">         
-        </div>
-      </div>  
-    </div>
     
     <div id="footer" class="px-5">
       <div class="container w-50 pt-4">
@@ -119,11 +73,13 @@
 
 </div>
 
+
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script src="./node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
 <script src="js/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
 <script src="js/Sneaker.js"></script>
-<script src="js/main.js"></script>
+<script src="js/cart.js"></script>
 </body>
 </html>

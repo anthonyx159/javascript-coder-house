@@ -35,3 +35,8 @@
     display: inline-block;
     width: 100px;
 }
+
+/* Estilos para  el checkout */
+.modal--product-checkout__content {
+    width: 38em !important;
+}

@@ -1,0 +1,114 @@
+{
+    "data" : [
+        {
+            "nike": [
+                {
+                    "image": "./img/productos/nike-1.jpg",
+                    "brand": "Nike",
+                    "model": "Air Jordan Retro",
+                    "price": 230
+                },
+                {
+                    "image": "./img/productos/nike-2.jpg",
+                    "brand": "Nike",
+                    "model": "Air Jordan Clasico",
+                    "price": 280
+                },
+                {
+                    "image": "./img/productos/nike-3.jpg",
+                    "brand": "Nike",
+                    "model": "Air Runner Clasico",
+                    "price": 330
+                }
+            ]
+        },
+        {
+            "adidas": [
+                {
+                    "image": "./img/productos/adidas-1.jpg",
+                    "brand": "Adidas",
+                    "model": "Turbo Max",
+                    "price": 350
+                },
+                {
+                    "image": "./img/productos/adidas-2.jpg",
+                    "brand": "Adidas",
+                    "model": "Runner Clasico",
+                    "price": 410
+                },
+                {
+                    "image": "./img/productos/adidas-3.jpg",
+                    "brand": "Adidas",
+                    "model": "Tennis Max",
+                    "price": 400
+                }
+            ]
+        },
+        {
+            "airJordan": [
+                {
+                    "image": "./img/productos/airJordan-1.jpg",
+                    "brand": "Nike Air Jordan",
+                    "model": "Turbo Max",
+                    "price": 319
+                },
+                {
+                    "image": "./img/productos/airJordan-2.jpg",
+                    "brand": "Nike Air Jordan",
+                    "model": "Runner Clasico",
+                    "price": 398
+                },
+                {
+                    "image": "./img/productos/airJordan-3.jpg",
+                    "brand": "Nike Air Jordan",
+                    "model": "Tennis Max",
+                    "price": 219
+                }
+            ]
+        },
+        {
+            "puma": [
+                {
+                    "image": "./img/productos/puma-1.jpeg",
+                    "brand": "Puma",
+                    "model": "Capsule Runner",
+                    "price": 452
+                },
+                {
+                    "image": "./img/productos/puma-2.jpeg",
+                    "brand": "Puma",
+                    "model": "Capsule Sport",
+                    "price": 187
+                },
+                {
+                    "image": "./img/productos/puma-3.jpeg",
+                    "brand": "Puma",
+                    "model": "Capsule Tennis",
+                    "price": 321
+                }
+            ]
+        },
+        {
+            "vans": [
+                {
+                    "image": "./img/productos/vans-1.jpg",
+                    "brand": "Vans",
+                    "model": "Capsule Runner",
+                    "price": 189
+                },
+                {
+                    "image": "./img/productos/vans-2.jpg",
+                    "brand": "Vans",
+                    "model": "Capsule Sport",
+                    "price": 199
+                },
+                {
+                    "image": "./img/productos/vans-3.jpg",
+                    "brand": "Vans",
+                    "model": "Capsule Tennis",
+                    "price": 289
+                }
+            ]
+        }
+    ]
+}

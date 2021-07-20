@@ -101,16 +101,16 @@ h1,h2,h3,h4,h5, button, .amiibo-name{
 }
 
 .boton-brand:hover {
-    background-color: #fff !important;
-    color: #000 !important;
-    border-bottom: 1px solid #000 !important;
-}
-
-/* .boton-brand.active {
     background-color: #fff;
     color: #000;
     border-bottom: 1px solid #000;
-} */
+}
+
+.boton-brand.active {
+    background-color: #fff;
+    color: #000;
+    border-bottom: 1px solid #000;
+}
 
 /* ESTILOS PARA EL SWEETALER2 */
 .modal--product__content {
@@ -165,52 +165,4 @@ h1,h2,h3,h4,h5, button, .amiibo-name{
 
 .template__quantity input {
     width: 40px;
-}
-
-/* Estilos para el checkout  */
-.student {
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #fff;
-    width: 100%;
-}
-
-.title {
-    font-weight: bold;
-    color: #212528;
-    padding: 10px 0;
-    text-align: center;
-    width: 100%;
-}
-
-.list-all {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.subtitle-item  {
-    font-weight: bold;
-    font-size: 16px;
-    color: #212528;
-    text-align: center;
-    display: inline-block;
-    width: 100px;
-    padding: 5px 0;
-}
-
-.subtitle-data  {
-    font-size: 16px;
-    color: #212528;
-    padding: 5px 0;
-    text-align: center;
-    display: inline-block;
-    width: 100px;
-}
-
-/* Estilos para  el checkout */
-.modal--product-checkout__content {
-    width: 45em !important;
 }

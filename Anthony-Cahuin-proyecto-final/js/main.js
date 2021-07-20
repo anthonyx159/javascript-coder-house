@@ -1,3 +1,116 @@
+data = [
+    {
+        nike: [
+            {
+                image: './img/productos/nike-1.jpg',
+                brand: 'Nike',
+                model: 'Air Jordan Retro',
+                price: 230
+            },
+            {
+                image: './img/productos/nike-2.jpg',
+                brand: 'Nike',
+                model: 'Air Jordan Clasico',
+                price: 280
+            },
+            {
+                image: './img/productos/nike-3.jpg',
+                brand: 'Nike',
+                model: 'Air Runner Clasico',
+                price: 330
+            }
+        ]
+    },
+    {
+        adidas: [
+            {
+                image: './img/productos/adidas-1.jpg',
+                brand: 'Adidas',
+                model: 'Turbo Max',
+                price: 350
+            },
+            {
+                image: './img/productos/adidas-2.jpg',
+                brand: 'Adidas',
+                model: 'Runner Clasico',
+                price: 410
+            },
+            {
+                image: './img/productos/adidas-3.jpg',
+                brand: 'Adidas',
+                model: 'Tennis Max',
+                price: 400
+            }
+        ]
+    },
+    {
+        airJordan: [
+            {
+                image: './img/productos/airJordan-1.jpg',
+                brand: 'Nike Air Jordan',
+                model: 'Turbo Max',
+                price: 319
+            },
+            {
+                image: './img/productos/airJordan-2.jpg',
+                brand: 'Nike Air Jordan',
+                model: 'Runner Clasico',
+                price: 398
+            },
+            {
+                image: './img/productos/airJordan-3.jpg',
+                brand: 'Nike Air Jordan',
+                model: 'Tennis Max',
+                price: 219
+            }
+        ]
+    },
+    {
+        puma: [
+            {
+                image: './img/productos/puma-1.jpeg',
+                brand: 'Puma',
+                model: 'Capsule Runner',
+                price: 452
+            },
+            {
+                image: './img/productos/puma-2.jpeg',
+                brand: 'Puma',
+                model: 'Capsule Sport',
+                price: 187
+            },
+            {
+                image: './img/productos/puma-3.jpeg',
+                brand: 'Puma',
+                model: 'Capsule Tennis',
+                price: 321
+            }
+        ]
+    },
+    {
+        vans: [
+            {
+                image: './img/productos/vans-1.jpg',
+                brand: 'Vans',
+                model: 'Capsule Runner',
+                price: 189
+            },
+            {
+                image: './img/productos/vans-2.jpg',
+                brand: 'Vans',
+                model: 'Capsule Sport',
+                price: 199
+            },
+            {
+                image: './img/productos/vans-3.jpg',
+                brand: 'Vans',
+                model: 'Capsule Tennis',
+                price: 289
+            }
+        ]
+    },
+]
+
 let templateSniker;
 let items = '';
 let item;
@@ -9,60 +122,21 @@ let templateModal =  document.querySelector('.template-modal');
 let itemClass = document.querySelectorAll('.boton-brand')
 let itemContainer = document.getElementById('item-container');
 let branContainer = document.getElementById('brand-container');
-let element;
-let data;
+let element
 let keyCar = []
 
-
-// USAR AJAX JQUERY PARA TRAER LA API
-$(document).ready(function () {
-    const APIURL = 'http://127.0.0.1:5500/js/api.json'
-    let data;
-        $.ajax({
-            async: false,
-            url: APIURL,
-            method: "GET",
-            success: function (response) {
-                data = response.data
-                localStorage.setItem('data', JSON.stringify(data))
-            }
-        })
-/* Estilos con jquery */
-    //Estilos por defecto 
-    $(".boton-brand.active").css({
-        "background-color": "#fff",
-        "color": "#000"
-    })
-    
-    $("#brand-container").click(function (e){
-        //resetear los estilos
-        $(".boton-brand").css({
-            "background-color": "#000000",
-            "color": "#fff"
-        })
-        // stylos cuando el boton es activo
-        if($(e.target).hasClass("boton-brand active")){
-            $(".boton-brand.active").css({
-                "background-color": "#fff",
-                "color": "#000"
-            })
-        }
-    })
+branContainer.addEventListener("click", e => {
+    // add clase active para el focus
+    itemClass.forEach(el =>{el.classList.remove("active")})
+    e.target.classList.add("active")
+    //ejecutar funcion
+    chooseBrand(e)
 })
-// Obtener la data de la api desde el localstorage
-data = JSON.parse(localStorage.getItem('data'))
-
-    branContainer.addEventListener("click", e => {
-        // add clase active para el focus
-        itemClass.forEach(el =>{el.classList.remove("active")})
-        e.target.classList.add("active")
-        //ejecutar funcion
-        chooseBrand(e)
-    })
 
 const drawProductsDefault = () => {
     //class active por defecto
     itemClass[0].classList.add("active")
+
     let dataNike = data[0].nike
     dataNike.forEach(el => {
         templateSniker = `
@@ -145,7 +219,6 @@ const addModalClass = () => {
     //itemContainer -> scope mayor
     itemContainer.addEventListener('click', e => {
         if(e.target.classList.contains('btn-product')) {
-            console.log(e.target)
             btnProduct.forEach( el => {el.classList.remove("modal-open")})
             e.target.classList.add("modal-open")
             let parentCard = e.target.parentElement.parentElement
@@ -204,15 +277,14 @@ const buildTemplateModal = (parentCard, clickSelected) => {
 
     // // Se contruye un objeto con la informacion del producto seleccionado
     item = {
-        "image" : itemImg,
         "name"  : cardTitle,
         "price" : itemPrice,
     }
 
-    openModalProduct(clickSelected);
+    openModalProduct(clickSelected, item);
 }
 
-const openModalProduct = (modalOpen) => {
+const openModalProduct = (modalOpen, item) => {
     
     if(modalOpen != null) {
         Swal.fire({
@@ -249,16 +321,14 @@ const openModalProduct = (modalOpen) => {
 
 const addToCar = (button) => {
     button.addEventListener("click", e => {
-        console.log(item)
-        //Quitar los espacios en blanco para que sea la key del localstorage
         let name = item.name;
-        let nameSanitazed = name.replace(/ /g, "")
-        let image = item.image
         let price = Number(item.price)
-        let size = Number(item.size)
-        let quantity = Number( typeof(item.quantity) == "undefined" ? 1 : item.quantity  )
-        let product = new Sneaker(nameSanitazed, image, name, price, size)
-            product.addToCart(quantity == null ? 1 : quantity)
+        let quantity = Number(item.quantity)
+        let product = new Sneaker(name, price)
+            product.addToCart(quantity)
+
+        //Quitar los espacios en blanco
+        let nameSanitazed = name.replace(/ /g, "")
 
             localStorage.setItem(nameSanitazed, JSON.stringify(element))
 
@@ -268,13 +338,12 @@ const addToCar = (button) => {
 }
 
 const getProduct = (key) => {
-    JSON.parse(localStorage.getItem(key))
+    console.log(JSON.parse(localStorage.getItem(key)))
 }
 
 const getSelectSize = () => {
     
     let size = document.querySelector('#item-size').value
-    console.log(size)
     item["size"] = size
 }
 
@@ -288,4 +357,3 @@ const getSelectQuantity = () => {
 // FUNCIONES LLAMADAS
 drawProductsDefault()
 addModalClass();
-// localStorage.clear()

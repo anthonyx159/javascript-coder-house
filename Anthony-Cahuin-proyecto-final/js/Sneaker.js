@@ -1,11 +1,7 @@
 class Sneaker{
-    constructor(key, image, name, price, size) {
-        this.key = key;
-        this.image = image;
+    constructor(name, price) {
         this.name = name;
         this.price = price;
-        this.size = size;
-        this.category = "sneaker";
     }
 
     
@@ -27,7 +23,6 @@ class Sneaker{
             product: this,
             quantity: qty,
             igv: this.getIgv(qty),
-            category: "sneaker",
             total: this.getTotal(qty)
         }
     }
@@ -36,5 +31,3 @@ class Sneaker{
         element = this.getCheckout(qty)
     }
 }
-
-// localStorage.clear()

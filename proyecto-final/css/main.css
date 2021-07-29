@@ -106,15 +106,21 @@ h1,h2,h3,h4,h5, button, .amiibo-name{
     border-bottom: 1px solid #000 !important;
 }
 
-/* .boton-brand.active {
+.boton-brand.active {
     background-color: #fff;
     color: #000;
     border-bottom: 1px solid #000;
-} */
+}
 
 /* ESTILOS PARA EL SWEETALER2 */
 .modal--product__content {
     width: 43em !important;
+}
+
+@media screen and (max-width: 768px) {
+    .modal--product__content {
+        width: 90% !important;
+    }
 }
 
 .modal--product__content__succes {
@@ -127,15 +133,40 @@ h1,h2,h3,h4,h5, button, .amiibo-name{
     display: flex;
 }
 
+@media screen and (max-width: 768px) {
+    .template {
+        flex-direction: column;
+    }
+
+    .modal--product__content__body {
+        padding-top: 0 !important;
+    }
+
+    .swal2-actions {
+        margin: 0.25em 0 !important;
+    }
+}
+
 .template__img img {
     width: 300px;
     height: 300px;
+}
+@media screen and (max-width: 768px) {
+    .template__img img {
+        width: 100%;
+        height: auto;
+    }
 }
 
 .template__brand {
     text-transform: uppercase;
     font-size: 26px;
     margin-bottom: 15px;
+}
+@media screen and (max-width: 768px) {
+    .template__brand {
+        font-size: 19px;
+    }
 }
 
 .template__description {
@@ -213,4 +244,23 @@ h1,h2,h3,h4,h5, button, .amiibo-name{
 /* Estilos para  el checkout */
 .modal--product-checkout__content {
     width: 45em !important;
+}
+
+/* about */
+.about {
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+@media  screen and (max-width : 768px){
+    .order-about {
+        order: 10;
+    }
+}
+
+/* footer */
+.footer-brand-mobile {
+    font-size: 26px;
+    font-weight: bold;
 }

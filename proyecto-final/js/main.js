@@ -10,57 +10,33 @@ let itemClass = document.querySelectorAll('.boton-brand')
 let itemContainer = document.getElementById('item-container');
 let branContainer = document.getElementById('brand-container');
 let element;
-let data;
 let keyCar = []
 
 
-// USAR AJAX JQUERY PARA TRAER LA API
-$(document).ready(function () {
-    const APIURL = 'http://127.0.0.1:5500/js/api.json'
-    let data;
-        $.ajax({
-            async: false,
-            url: APIURL,
-            method: "GET",
-            success: function (response) {
-                data = response.data
-                localStorage.setItem('data', JSON.stringify(data))
-            }
-        })
-/* Estilos con jquery */
-    //Estilos por defecto 
-    $(".boton-brand.active").css({
-        "background-color": "#fff",
-        "color": "#000"
+//Se usa fetch para traer la data que sera pintada en el home
+fetch('http://127.0.0.1:5500/js/api.json')
+    .then(response => response.json())
+    .then(data => {
+        let datos = data.data
+        // pinta los datos en el home
+        drawProductsDefault(datos);
     })
-    
-    $("#brand-container").click(function (e){
-        //resetear los estilos
-        $(".boton-brand").css({
-            "background-color": "#000000",
-            "color": "#fff"
-        })
-        // stylos cuando el boton es activo
-        if($(e.target).hasClass("boton-brand active")){
-            $(".boton-brand.active").css({
-                "background-color": "#fff",
-                "color": "#000"
-            })
-        }
-    })
-})
-// Obtener la data de la api desde el localstorage
-data = JSON.parse(localStorage.getItem('data'))
 
     branContainer.addEventListener("click", e => {
         // add clase active para el focus
         itemClass.forEach(el =>{el.classList.remove("active")})
         e.target.classList.add("active")
-        //ejecutar funcion
-        chooseBrand(e)
+        //Se trae nuevamente los datos requeridos cada vez que se da click mediante fetch
+        fetch('http://127.0.0.1:5500/js/api.json')
+         .then(response => response.json())
+         .then(data => {
+            let datos = data.data
+            //Se ejecuta la funcion solo pintando los datos necesarios por marca
+            chooseBrand(e, datos)
+        })
     })
 
-const drawProductsDefault = () => {
+const drawProductsDefault = (data) => {
     //class active por defecto
     itemClass[0].classList.add("active")
     let dataNike = data[0].nike
@@ -86,7 +62,7 @@ const drawProductsDefault = () => {
     items = '';
 }
 
-const chooseBrand = e => {
+const chooseBrand = (e, data) => {
     switch (e.target.id) {
         case 'nike-brand' :
             idBrand = 0;
@@ -109,10 +85,10 @@ const chooseBrand = e => {
             brand = 'vans'
             break
     }
-    drawProducts(idBrand, brand)
+    drawProducts(idBrand, brand, data)
 }
 
-const drawProducts = (id, brand) => {
+const drawProducts = (id, brand, data) => {
     dataBrand = data[id]
     dataBrand[brand]
     itemContainer.innerHTML = '';
@@ -286,6 +262,4 @@ const getSelectQuantity = () => {
 
 
 // FUNCIONES LLAMADAS
-drawProductsDefault()
 addModalClass();
-// localStorage.clear()

@@ -13,13 +13,13 @@ class Sneaker{
         return this.price * qty
     }
     
-    getIgv = function (){
+    getIgv = function (qty = 1){
         // return Number((this.getAmount(qty) * 0.18).toFixed(2))
-        return Number((this.price * 0.18).toFixed(2))
+        return Number((this.price * 0.18).toFixed(2) * qty)
     }
 
     getTotal = function (qty){
-        return this.getAmount(qty) + this.getIgv() * qty
+        return this.getAmount(qty)
     }
 
     getCheckout = function (qty) {
